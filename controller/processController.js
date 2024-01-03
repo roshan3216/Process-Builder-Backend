@@ -37,7 +37,7 @@ export const automatedProcess = async ( req , res ) =>{
             return res.status(400).json('Please fill the form');
         }
 
-        const aiResponse = await geminiAPI(body.prompt);
+        const [aiResponse] = await geminiAPI(body.prompt);
         console.log(aiResponse,'[aiResponse]-[automatedProccess]');
         
         return res.status(200).json(aiResponse);
