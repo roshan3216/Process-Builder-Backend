@@ -49,11 +49,8 @@ export const geminiAPI = async (userInput) => {
         
         const text = response.text();
         console.log(text,'[text]-[geminiAPI]');
-
-        const temp = text.replace('```','');
-        const json = JSON.parse(temp);
         
-        return json;
+        return text;
     } catch (err) {
         console.error(err,'[error in getting gemini api response]');
 
