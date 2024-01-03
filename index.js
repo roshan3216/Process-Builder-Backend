@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({limit: '1mb' ,extended: true}));
 app.use('/',processRoutes);
 
 app.use('/', async (req,res) =>{
-    return res.status(200).json('Process API is working.');
+    return res.status(200).json('Process API is working');
 })
 
 app.listen(port,async () =>{

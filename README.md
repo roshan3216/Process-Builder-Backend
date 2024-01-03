@@ -10,14 +10,14 @@ This app uses Gemini API for generating the steps involved in a process automati
 $ npm install
 ```
 
-• Generate an Gemini API key from Google AI Studio
+• Generate an Gemini API key from Google AI Studio <br/>
 • Create a mongo db connection string
 
 Add the above two in an environment variable with the names specified in .env.example
 
 Start the app 
 ```
-npm start
+$ npm start
 ```
 
 #### Cosideration 
