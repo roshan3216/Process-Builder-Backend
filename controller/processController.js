@@ -77,6 +77,6 @@ export const submitProcess = async ( req, res ) =>{
     } catch (err) {
         console.error(err,'[error in submitting process]');
 
-        return res.status(500).json('Internal Serve Error');
+        return res.status(500).json('Internal Server Error');
     }
 }
