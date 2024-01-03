@@ -49,13 +49,28 @@ export const geminiAPI = async (userInput) => {
         
         const text = response.text();
         console.log(text,'[text]-[geminiAPI]');
-        
-        return text;
+
+        const filteredString = text.replace('/\s+g', '');
+        console.log(filteredString,'[filteredStirng]');
+        const json = JSON.parse(filteredString);
+        console.log(json, '[json]');
+        return [json, null];
     } catch (err) {
         console.error(err,'[error in getting gemini api response]');
 
-        throw new Error('Error in gemini API');
+        // throw new Error('Error in gemini API');
+        return [null, err];
     }
 }
 
-export default geminiAPI;
+
+const recursiveCall = async(prompt) =>{
+    const resp = await geminiAPI (prompt);
+    if(!resp[0] || !resp[0].length){
+        return recursiveCall(prompt);
+    }
+
+    return resp;
+}
+
+export default recursiveCall;
